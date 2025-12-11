@@ -1,0 +1,83 @@
+:root {
+  --primary-green: #1E453E;
+  --accent-orange: #f77e2d;
+}
+
+.vehicle-history-page {
+  font-family: 'Poppins', sans-serif;
+  min-height: calc(100vh - 60px);
+  padding: 60px 20px 40px; /* top space for navbar */
+  background-color: #f9f9f9;
+}
+
+.vehicle-history-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.vehicle-history-title {
+  color: var(--primary-green);
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: 50px;
+  font-weight: 700;
+}
+
+.vehicle-history-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.vehicle-card {
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 25px 20px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.vehicle-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.vehicle-info h3.plate-number {
+  color: var(--accent-orange);
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+.vehicle-info p {
+  color: #555555;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.status.completed {
+  color: green;
+  font-weight: 600;
+}
+
+.status.pending {
+  color: orange;
+  font-weight: 600;
+}
+
+.status.cancelled {
+  color: red;
+  font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .vehicle-history-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .vehicle-history-grid {
+    grid-template-columns: 1fr;
+  }
+}

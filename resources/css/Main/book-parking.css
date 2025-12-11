@@ -1,0 +1,265 @@
+/* ===============================
+   🌿 MAIN CONTAINER
+=============================== */
+.book-parking-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  background-color: #f8f9fa;
+  min-height: calc(100vh - 60px); /* full viewport minus navbar height */
+  font-family: "Poppins", sans-serif;
+  color: #1e453e;
+  margin-top: 60px; /* aligns below fixed navbar */
+}
+
+/* ===============================
+   🧭 SIDEBAR
+=============================== */
+.sidebar-section {
+  width: 240px;
+  flex-shrink: 0;
+  background-color: #fff;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.08);
+  height: 95%; /* 97% of viewport height */
+  position: fixed;
+  top: 60px; /* start below navbar */
+  left: 0;
+  z-index: 5;
+  padding-top: 1rem;
+  overflow-y: hidden;
+  border-radius: 0 0 10px 0;
+}
+
+/* ===============================
+   📄 MAIN CONTENT
+=============================== */
+.content-section {
+  flex: 1;
+  padding: 2rem;
+  margin-left: 240px; /* space for sidebar */
+  overflow-x: hidden;
+  max-width: 1200px;
+  margin-right: auto;
+}
+
+.page-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #1e453e;
+  margin-bottom: 1.2rem;
+}
+
+/* ===============================
+   📦 BOOKING WRAPPER
+=============================== */
+.booking-wrapper {
+  width: 100%;
+  max-width: 950px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* ===============================
+   🗺 MAP SECTION / CARD
+=============================== */
+.map-section {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  padding: 1.5rem 2rem;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.map-section:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.next-step-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+/* ===============================
+   📝 FORM CARD
+=============================== */
+.booking-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  padding: 1.8rem 2rem;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: #1e453e;
+  display: block;
+  margin-bottom: 0.4rem;
+  font-size: 0.9rem;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 0.65rem 0.9rem;
+  border: 1.5px solid #d8e1da;
+  border-radius: 10px;
+  background-color: #fafafa;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #1e453e;
+  background-color: #fff;
+  box-shadow: 0 0 0 3px rgba(30, 69, 62, 0.1);
+}
+
+.time-row {
+  display: flex;
+  gap: 1rem;
+}
+
+.time-row div {
+  flex: 1;
+}
+
+/* ===============================
+   🎛 BUTTONS
+=============================== */
+.btn-next-step {
+  background-color: #1e453e;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 0.8rem 2.2rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-next-step:hover:not(:disabled) {
+  background-color: #163d34;
+  transform: translateY(-2px);
+}
+
+.btn-next-step:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.btn-submit {
+  background-color: #1e453e;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 0.8rem 2rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-submit:hover {
+  background-color: #163d34;
+  transform: translateY(-2px);
+}
+
+.btn-back {
+  background-color: #eee;
+  color: #333;
+  border: none;
+  border-radius: 10px;
+  padding: 0.8rem 2rem;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.button-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+/* ===============================
+   📱 RESPONSIVE (13” & BELOW)
+=============================== */
+@media (max-width: 1440px) {
+  .content-section {
+    margin-left: 230px;
+    padding: 1.5rem;
+  }
+
+  .map-section,
+  .booking-card {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .sidebar-section {
+    width: 210px;
+  }
+
+  .content-section {
+    margin-left: 210px;
+    padding: 1.2rem;
+  }
+
+  .page-title {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .book-parking-container {
+    flex-direction: column;
+  }
+
+  .sidebar-section {
+    position: relative;
+    width: 100%;
+    height: auto;
+    border-right: none;
+    box-shadow: none;
+  }
+
+  .content-section {
+    margin-left: 0;
+    padding: 1rem;
+  }
+
+  .map-section,
+  .booking-card {
+    padding: 1.2rem;
+    width: 100%;
+  }
+
+  .btn-next-step,
+  .btn-submit,
+  .btn-back {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-title {
+    font-size: 1.3rem;
+  }
+
+  .form-group input,
+  .form-group select {
+    font-size: 0.85rem;
+  }
+}

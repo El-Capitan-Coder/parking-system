@@ -1,0 +1,156 @@
+/* ✅ Layout with sidebar + navbar space */
+.profile-container {
+  display: flex;
+  gap: 25px;
+  padding: 20px 20px 40px;
+  padding-top: 80px; /* Navbar offset */
+  min-height: calc(100vh - 60px);
+  background: #f8f9fa;
+}
+
+/* ✅ Content Card */
+.profile-content {
+  flex: 1;
+  background: #ffffff;
+  padding: 30px 35px;
+  border-radius: 12px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* ✅ Heading */
+.preferences-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1E453E;
+  margin-bottom: 25px;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 10px;
+}
+
+/* ✅ Sections */
+.preferences-section {
+  background: #f7f7f7;
+  padding: 18px 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.preferences-section h5 {
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #333;
+}
+
+/* ✅ Switch Row */
+.switch-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  font-size: 15px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.switch-label:last-child {
+  border-bottom: none;
+}
+
+/* ✅ Toggle Switch */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 46px;
+  height: 24px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background-color: #ccc;
+  transition: 0.3s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.3s;
+  border-radius: 50%;
+}
+
+/* Active switch */
+input:checked + .slider {
+  background-color: #1E453E;
+}
+
+input:checked + .slider:before {
+  transform: translateX(22px);
+}
+
+/* ✅ Buttons */
+.preferences-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.btn-save,
+.btn-reset {
+  padding: 10px 20px;
+  width: 50%;
+  font-size: 15px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.btn-save {
+  background: #1E453E;
+  color: #fff;
+}
+
+.btn-save:hover {
+  background: #16352f;
+  transform: translateY(-2px);
+}
+
+.btn-reset {
+  background: #e0e0e0;
+  color: #333;
+}
+
+.btn-reset:hover {
+  background: #c6c6c6;
+}
+
+/* ✅ Responsive Fixes */
+@media (max-width: 992px) {
+  .profile-container {
+    flex-direction: column;
+    padding-top: 90px;
+  }
+
+  .profile-sidebar {
+    width: 100% !important;
+  }
+
+  .profile-content {
+    width: 100%;
+  }
+}

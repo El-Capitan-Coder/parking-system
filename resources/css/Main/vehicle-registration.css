@@ -1,0 +1,229 @@
+/* ===============================
+   🌿 VEHICLE REGISTRATION PAGE
+   =============================== */
+.vehicle-container {
+  display: flex;
+  gap: 2rem;
+  font-family: "Poppins", sans-serif;
+  min-height: calc(100vh - 60px); /* subtract navbar height */
+  background: #f9fafb;
+  margin-top: 60px; /* ✅ adds top space for navbar */
+}
+
+/* Sidebar – stays fixed beside the navbar */
+.sidebar-section {
+  width: 240px;
+  flex-shrink: 0;
+  background-color: #fff;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.08);
+  height: calc(100vh - 60px); /* ✅ fills viewport under navbar */
+  position: fixed;
+  top: 60px; /* start below navbar */
+  left: 0;
+  z-index: 5;
+  padding-top: 1rem;
+  overflow-y: auto;
+  border-radius: 0 0 10px 0;
+}
+
+/* Content section – adjusted for sidebar & navbar */
+.content-section {
+  flex: 1;
+  padding: 2rem;
+  margin-left: 260px; /* ✅ leaves room for sidebar */
+  overflow-x: hidden;
+  max-width: 1200px;
+  margin-right: auto;
+}
+
+/* Titles and Headings */
+.page-title {
+  font-size: 1.8rem;
+  color: #1e453e;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+/* Vehicle Cards & Forms */
+.vehicle-form-card,
+.vehicle-list-card {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.vehicle-form-card h3,
+.vehicle-list-card h3 {
+  margin-bottom: 1rem;
+  color: #163d34;
+}
+
+/* Form elements */
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 0.3rem;
+  color: #1e453e;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #1e453e;
+  outline: none;
+}
+
+/* Buttons */
+.btn-register {
+  width: 100%;
+  padding: 0.7rem;
+  background: #1e453e;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-register:hover {
+  background: #163d34;
+}
+
+/* Feedback message */
+.message {
+  margin-top: 1rem;
+  text-align: center;
+  font-weight: 500;
+  color: #ff914d;
+}
+
+/* Vehicle list cards */
+.vehicle-card {
+  border: 1px solid #e0e0e0;
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  background: #fdfdfd;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.vehicle-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
+}
+
+.vehicle-card h4 {
+  margin-bottom: 0.3rem;
+  color: #1e453e;
+  font-weight: 600;
+}
+
+.no-vehicle {
+  text-align: center;
+  color: #6c757d;
+  margin-top: 1rem;
+}
+
+/* Action buttons */
+.vehicle-card-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.btn-edit,
+.btn-delete {
+  padding: 0.3rem 0.6rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-edit {
+  background: #ff914d;
+  color: #fff;
+}
+
+.btn-edit:hover {
+  background: #e67022;
+}
+
+.btn-delete {
+  background: #dc3545;
+  color: #fff;
+}
+
+.btn-delete:hover {
+  background: #a71d2a;
+}
+
+/* Pagination buttons */
+.pagination-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+
+.pagination-controls button {
+  padding: 0.4rem 0.9rem;
+  border: none;
+  background: #1e453e;
+  color: #fff;
+  border-radius: 5px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.pagination-controls button:hover {
+  background: #163d34;
+}
+
+/* Responsive layout */
+@media (max-width: 992px) {
+  .sidebar-section {
+    width: 200px;
+  }
+
+  .content-section {
+    margin-left: 210px;
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .vehicle-container {
+    flex-direction: column;
+  }
+
+  .sidebar-section {
+    position: relative;
+    width: 100%;
+    height: auto;
+    top: 0;
+    box-shadow: none;
+  }
+
+  .content-section {
+    margin-left: 0;
+    padding: 1.5rem;
+  }
+}

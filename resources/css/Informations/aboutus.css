@@ -1,0 +1,98 @@
+:root {
+  --primary-green: #1E453E;
+  --accent-orange: #f77e2d;
+  --light-bg: #f9f9f9;
+  --dark-text: #1a1a1a;
+}
+
+.about-page {
+  font-family: 'Poppins', sans-serif;
+  min-height: calc(100vh - 60px); /* full viewport minus navbar */
+  padding-top: 60px;
+  background-color: var(--light-bg);
+  color: var(--dark-text);
+}
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(135deg, var(--primary-green), #276749);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 100px 20px;
+  border-radius: 0 0 30px 30px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.hero-section h1 {
+  font-size: 2.8rem;
+  letter-spacing: 1px;
+}
+
+.hero-section p {
+  font-size: 1.2rem;
+  margin-top: 15px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Accent Text */
+.text-accent {
+  color: var(--accent-orange) !important;
+  font-weight: 600;
+}
+
+/* About Cards */
+.about-card {
+  border: none;
+  border-radius: 20px;
+  background: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 30px 20px;
+}
+
+.about-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+.about-card h4 {
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--primary-green);
+}
+
+.about-card p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* Images */
+img.img-fluid {
+  max-height: 380px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* Responsive Tweaks */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 70px 20px;
+  }
+
+  .hero-section h1 {
+    font-size: 2rem;
+  }
+
+  img.img-fluid {
+    max-height: 250px;
+  }
+
+  .about-card {
+    padding: 20px 15px;
+  }
+}

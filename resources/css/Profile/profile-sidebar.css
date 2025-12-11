@@ -1,0 +1,132 @@
+/* ✅ Main Sidebar */
+.profile-sidebar {
+  width: 260px;
+  background: #ffffff;
+  padding: 25px 20px;
+  height: 97vh; /* removed -60px */
+  position: sticky;
+  top: 0; /* removed 60px */
+  display: flex;
+  flex-direction: column;
+  font-family: "Poppins", sans-serif;
+  color: #000000;
+  border-right: 1px solid #ececec;
+  box-shadow: 4px 0 12px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
+}
+
+/* ✅ Section Block */
+.sidebar-section {
+  margin-bottom: 18px;
+}
+
+/* ✅ Section Label */
+.sidebar-title {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #6b6b6b;
+  margin-bottom: 8px;
+  letter-spacing: 0.6px;
+}
+
+/* ✅ Links */
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #4a4a4a !important;
+  font-size: 15px;
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+  position: relative;
+}
+
+/* ✅ Hover Style */
+.sidebar-link:hover {
+  background-color: #ffe6d4;
+  color: #ff914d !important;
+  transform: translateX(4px);
+}
+
+/* ✅ Active Style */
+.sidebar-link.active {
+  background-color: #fff2e8;
+  color: #ff914d !important;
+  font-weight: 600;
+  border-left: 4px solid #ff914d;
+  padding-left: 12px;
+}
+
+/* ✅ Icons */
+.sidebar-link i {
+  font-size: 18px;
+  opacity: 0.85;
+  transition: color 0.25s ease-in-out, opacity 0.25s ease-in-out;
+}
+
+.sidebar-link.active i,
+.sidebar-link:hover i {
+  color: #ff914d;
+  opacity: 1;
+}
+
+/* ✅ Footer/Logout */
+.sidebar-footer {
+  margin-top: auto;
+  padding-top: 18px;
+  border-top: 1px solid #ebebeb;
+}
+
+/* ✅ Logout Style */
+.sidebar-link.logout {
+  color: #d70e0e !important;
+  font-weight: 600;
+}
+
+.sidebar-link.logout:hover {
+  background-color: #ffe6e6;
+  border-left: 4px solid #e60000;
+  color: #e60000 !important;
+}
+
+/* ✅ Small Screens */
+@media (max-width: 992px) {
+  .profile-sidebar {
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    overflow-x: auto;
+    padding: 15px 10px;
+    border-right: none;
+    border-bottom: 1px solid #e5e7eb;
+    box-shadow: none;
+  }
+
+  .sidebar-section {
+    margin-right: 20px;
+    margin-bottom: 0;
+  }
+
+  .sidebar-title {
+    display: none;
+  }
+
+  .sidebar-link {
+    padding: 10px 12px;
+    border-left: none;
+    white-space: nowrap;
+  }
+
+  .sidebar-link.active {
+    border-left: none;
+    background-color: #fff2e8;
+  }
+
+  .sidebar-footer {
+    display: none;
+  }
+}

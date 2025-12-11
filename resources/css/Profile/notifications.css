@@ -1,0 +1,65 @@
+.notifications-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.notification-card {
+  background: #ffffff;
+  padding: 15px 18px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  border-left: 6px solid transparent;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+  transition: 0.2s ease;
+}
+
+.notification-card.unread {
+  background: #f6f9ff;
+}
+
+.notification-card.success {
+  border-color: #28a745;
+}
+
+.notification-card.warning {
+  border-color: #ffc107;
+}
+
+.notification-card.danger {
+  border-color: #dc3545;
+}
+
+.notification-text h4 {
+  font-size: 16px;
+  margin: 0;
+  font-weight: 600;
+}
+
+.notification-text p {
+  margin: 4px 0;
+  font-size: 14px;
+  color: #444;
+}
+
+.small {
+  font-size: 12px;
+  color: #777;
+}
+
+.mark-read-btn {
+  background: #007bff;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  padding: 6px 12px;
+  font-size: 13px;
+  cursor: pointer;
+  height: 32px;
+  align-self: center;
+}
+
+.mark-read-btn:hover {
+  background: #0067d3;
+}

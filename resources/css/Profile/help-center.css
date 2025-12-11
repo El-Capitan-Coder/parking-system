@@ -1,0 +1,131 @@
+/* Main Layout */
+.help-center-layout {
+  display: flex;
+  gap: 25px;
+  padding: 20px;
+  padding-top: 80px; /* ✅ Navbar offset (60px + margin) */
+  min-height: calc(100vh - 60px);
+  background: #f8f9fa;
+}
+
+/* Main White Card */
+.help-center-container {
+  flex: 1;
+  background: #ffffff;
+  padding: 30px 35px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 18px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Heading */
+.help-title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 700;
+  color: #1E453E;
+  margin-bottom: 25px;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 10px;
+}
+
+/* Search Bar */
+.search-box input {
+  width: 100%;
+  padding: 12px 15px;
+  border-radius: 8px;
+  border: 1px solid #c9d4cf;
+  outline: none;
+  font-size: 15px;
+  transition: 0.2s ease;
+}
+
+.search-box input:focus {
+  border: 1px solid #1E453E;
+  box-shadow: 0 0 0 0.15rem rgba(30, 69, 62, 0.25);
+}
+
+/* FAQ Section */
+.faq-section {
+  margin-top: 25px;
+}
+
+.faq-section h5 {
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #1E453E;
+}
+
+.faq-item {
+  background: #f7f7f7;
+  padding: 15px 18px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.faq-item:hover {
+  background: #edf6f3;
+}
+
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  color: #333;
+}
+
+.faq-answer {
+  margin-top: 10px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #555;
+  padding-left: 5px;
+}
+
+/* Support Section */
+.support-section {
+  text-align: center;
+  margin-top: 35px;
+  padding: 20px;
+  background: #f0f5f3;
+  border-radius: 10px;
+}
+
+.support-section h5 {
+  color: #1E453E;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.btn-contact {
+  margin-top: 12px;
+  background: #1E453E;
+  color: #ffffff;
+  border: none;
+  padding: 12px 20px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: 0.2s ease-in-out;
+}
+
+.btn-contact:hover {
+  background: #16352f;
+  transform: translateY(-2px);
+}
+
+/* ✅ Responsive Layout Fixes */
+@media (max-width: 992px) {
+  .help-center-layout {
+    flex-direction: column;
+    padding-top: 90px;
+  }
+
+  .help-center-container {
+    width: 100%;
+  }
+}

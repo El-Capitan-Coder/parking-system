@@ -1,0 +1,206 @@
+/* ==========================
+   🌿 Variables
+========================== */
+:root {
+  --navbar-height: 60px;
+  --sidebar-width: 250px;
+  --primary-green: #1e453e;
+  --secondary-green: #28a745;
+  --accent-orange: #ff914d;
+  --light-green: #a8e6cf;
+  --parking-bg: #f0f4f8;
+  --occupied-gray: #6c757d;
+  --slot-hover-shadow: rgba(0, 0, 0, 0.15);
+}
+
+/* ==========================
+   Main Wrapper
+========================== */
+.main-wrapper {
+  display: flex;
+  min-height: 100vh;
+  padding-top: var(--navbar-height);
+  padding-left: var(--sidebar-width);
+  background-color: #f8f9fa;
+  box-sizing: border-box;
+}
+
+/* ==========================
+   Parking Map Card
+========================== */
+.parking-map-card {
+  border: none;
+  border-radius: 16px;
+  padding: 1.5rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 2rem auto;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  background-color: #ffffff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.parking-map-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.12);
+}
+
+.parking-section-title {
+  color: var(--primary-green);
+  margin-bottom: 2rem;
+  font-size: 1.9rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* ==========================
+   Parking Grid
+========================== */
+.parking-grid {
+  background-color: var(--parking-bg);
+  border-radius: 20px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: relative;
+}
+
+/* Rows of slots */
+.parking-row {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* ==========================
+   Parking Slots
+========================== */
+.parking-slot {
+  width: 100px;
+  height: 100px;
+  border-radius: 15px;
+  border: 3px solid var(--primary-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  user-select: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
+}
+
+/* Available slot */
+.parking-slot-available {
+  background-color: var(--primary-green);
+}
+
+.parking-slot-available:hover {
+  transform: scale(1.08);
+  background-color: var(--secondary-green);
+  box-shadow: 0 6px 12px var(--slot-hover-shadow);
+}
+
+/* Selected slot */
+.parking-slot-selected {
+  background-color: var(--accent-orange);
+  border-color: var(--accent-orange);
+  transform: scale(1.1);
+  box-shadow: 0 8px 16px var(--slot-hover-shadow);
+}
+
+/* Occupied slot */
+.parking-slot-occupied {
+  background-color: var(--occupied-gray);
+  border-color: var(--occupied-gray);
+  cursor: not-allowed;
+  color: #e0e0e0;
+  box-shadow: none;
+}
+
+/* Car inside slot */
+.parking-slot-car {
+  background-color: var(--light-green);
+  cursor: default;
+}
+
+/* Slot number */
+.slot-number {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+/* Optional car icon inside slot */
+.slot-car-icon {
+  font-size: 2rem;
+  color: var(--primary-green);
+}
+
+/* ==========================
+   Entrance Label
+========================== */
+.entrance-label {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%) rotate(90deg);
+  color: var(--primary-green);
+  font-weight: 700;
+  font-size: 1.1rem;
+  white-space: nowrap;
+}
+
+/* ==========================
+   Book Now Button
+========================== */
+.book-now-btn {
+  background-color: var(--accent-orange);
+  border-color: var(--accent-orange);
+  font-weight: 700;
+  padding: 0.8rem 2rem;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.book-now-btn:hover {
+  background-color: #30e047;
+  border-color: #30e047;
+  transform: translateY(-2px);
+}
+
+.book-now-btn:disabled {
+  background-color: var(--occupied-gray);
+  border-color: var(--occupied-gray);
+  cursor: not-allowed;
+}
+
+/* ==========================
+   Responsive Improvements
+========================== */
+@media (max-width: 1200px) {
+  .parking-slot {
+    width: 80px;
+    height: 80px;
+  }
+
+  .parking-grid {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .parking-slot {
+    width: 60px;
+    height: 60px;
+  }
+
+  .parking-map-card {
+    margin: 1rem;
+    padding: 1rem;
+  }
+}

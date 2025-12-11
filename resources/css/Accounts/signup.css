@@ -1,0 +1,283 @@
+:root {
+  --primary-green: #1E453E;
+  --accent-orange: #FF914D; /* Official school orange */
+  --accent-orange-dark: #e67022; /* hover/darker shade */
+  --dark-bg: #0f3a29;
+  --light-bg: #f9f9f9;
+}
+
+/* Full viewport with navbar offset */
+.signup-container {
+  width: 100%;
+  min-height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  overflow: hidden;
+  padding-top: 60px; /* same as navbar height */
+  background: linear-gradient(135deg, #e9f5f0, #fefefe);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Left background panel */
+.signup-left {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 60px);
+  background: url("/Images/background.png") center/cover no-repeat;
+  clip-path: polygon(0 0, 48% 0, 42% 100%, 0 100%);
+  z-index: 1;
+  filter: brightness(0.9);
+}
+.signup-left::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(30, 69, 62, 0.3);
+}
+
+/* Right background */
+.signup-right {
+  position: absolute;
+  top: 60px;
+  right: 0;
+  width: 100%;
+  height: calc(100% - 60px);
+  z-index: 2;
+  padding-left: 45%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url("/Images/background-2.png") center/cover no-repeat;
+  clip-path: polygon(48% 0, 100% 0, 100% 100%, 42% 100%);
+}
+
+/* Glassy signup box */
+.signup-box {
+  position: relative;
+  z-index: 3;
+  background: rgba(255, 255, 255, 0.85);        
+  backdrop-filter: blur(15px);
+  max-width: 480px;
+  width: 100%;
+  padding: 5rem;
+  border-radius: 20px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+  border: 1px solid rgba(255,255,255,0.3);
+  animation: fadeIn 0.6s ease;
+  text-align: center;
+}
+
+/* Headings */
+.signup-box h3 {
+  font-weight: 600;
+  color: var(--dark-bg);
+  font-size: 1.9rem;
+}
+.signup-box p {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* Inputs */
+.signup-box .form-control,
+.signup-box .form-select {
+  border-radius: 12px;
+  border: 1.5px solid #ccc;
+  padding: 0.9rem 1.1rem;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 1rem;
+}
+.signup-box .form-control:focus,
+.signup-box .form-select:focus {
+  border-color: var(--primary-green);
+  box-shadow: 0 0 10px rgba(30,69,62,0.25);
+  outline: none;
+}
+
+/* Password eye */
+.password-wrapper {
+  position: relative;
+}
+.password-wrapper .form-control {
+  padding-right: 3rem;
+}
+.password-toggle-icon {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-45%);
+  font-size: 1.4rem;
+  color: #555;
+  cursor: pointer;
+}
+.password-toggle-icon:hover {
+  color: var(--dark-bg);
+}
+
+/* Step indicator */
+.step-indicator {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  color: #666;
+  transition: all 0.3s ease;
+}
+.step-indicator.active {
+  background: var(--primary-green);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(30,69,62,0.4);
+}
+
+/* Buttons */
+.signup-box .btn-primary {
+  background: linear-gradient(135deg, var(--accent-orange), var(--accent-orange-dark));
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  min-height: 42px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.signup-box .btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(255, 145, 77, 0.45);
+}
+
+.signup-box .btn-secondary {
+  background: #ccc;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  min-height: 42px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.signup-box .btn-secondary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+}
+
+/* Links */
+.signup-box a {
+  color: var(--primary-green);
+  font-weight: 600;
+  text-decoration: none;
+}
+.signup-box a:hover {
+  text-decoration: underline;
+}
+
+/* Error */
+.text-danger {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Terms modal */
+.terms-modal {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* Modal content */
+.terms-content {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 16px;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+  animation: fadeIn 0.4s ease forwards;
+}
+
+/* Smaller modal button - gray style */
+.terms-content .modal-btn {
+  background: #ccc;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.45rem 1rem;
+  min-height: 34px;
+  width: auto;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.terms-content .modal-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+
+/* Animation keyframes */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeOutUp {
+  from { opacity: 1; transform: translateY(0); }
+  to   { opacity: 0; transform: translateY(-20px); }
+}
+
+/* Closing state */
+.terms-content.closing {
+  animation: fadeOutUp 0.35s ease forwards;
+}
+
+.terms-link {
+  color: var(--accent-orange);
+  cursor: pointer;
+  font-weight: 600;
+}
+.terms-link:hover {
+  text-decoration: underline;
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+
+/* Icon animation */
+.animate-icon {
+  display: inline-block;
+  animation: popIn 0.6s ease forwards;
+}
+
+@keyframes popIn {
+  0%   { transform: scale(0.5); opacity: 0; }
+  60%  { transform: scale(1.2); opacity: 1; }
+  80%  { transform: scale(0.9); }
+  100% { transform: scale(1); }
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .signup-left, .signup-right {
+    clip-path: none;
+    width: 100%;
+    height: 40vh;
+    position: relative;
+    top: 0;
+  }
+  .signup-box {
+    max-width: 400px;
+    padding: 2rem;
+    margin-top: -20px;
+  }
+}

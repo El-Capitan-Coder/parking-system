@@ -1,0 +1,93 @@
+/* ==========================
+   Sidebar Container
+========================== */
+.sidebar-container {
+  position: relative;
+  top: 60px; /* Offset for navbar */
+  left: 0;
+  width: 220px; /* Sidebar width */
+  height: calc(100vh - 60px); /* Full height minus navbar */
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  box-shadow: 2px 0 8px rgba(0,0,0,0.08);
+  background-color: #fff;
+  z-index: 1000;
+
+  /* Scrollable sidebar */
+  overflow-y: auto;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* Optional: Custom scrollbar */
+.sidebar-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sidebar-container::-webkit-scrollbar-thumb {
+  background-color: rgba(30, 69, 62, 0.4);
+  border-radius: 3px;
+}
+
+/* ==========================
+   Menu Sections & Items
+========================== */
+.menu-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.menu-item {
+  background: none;
+  border: none;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  color: var(--primary-green);
+  font-weight: 500;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+/* Active menu highlight */
+.menu-item.active {
+  background-color: var(--primary-green);
+  color: #fff;
+}
+
+/* Hover effect */
+.menu-item:hover {
+  background-color: rgba(30, 69, 62, 0.08);
+  transform: translateX(2px);
+}
+
+/* Icons */
+.menu-item i {
+  font-size: 1.1rem;
+}
+
+/* ==========================
+   Responsive adjustments
+========================== */
+@media (max-width: 992px) {
+  .sidebar-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow-y: visible; /* Let page scroll on mobile */
+    box-shadow: none;
+    top: 0;
+  }
+
+  .menu-item {
+    justify-content: center;
+    gap: 0.3rem;
+    padding: 0.65rem 0.8rem;
+  }
+}
